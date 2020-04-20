@@ -1,0 +1,14 @@
+.dark-mode {
+background-color: navy;
+color: wheat;
+}
+
+form {
+    height: 30vh;
+    padding: 10vh
+}
+
+.jordan-mode {
+    font-size: 2em;
+}
+
