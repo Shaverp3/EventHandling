@@ -13,14 +13,14 @@ function flightHandlerFunction(){
     document.querySelector("#flight").classList.add("enabled")
 }
 
-document.querySelector("#activate-flight").addEventListener("click", flightHandlerFunction)
+document.querySelector("#activate-flight").addEventListener("click", activateAny)
 
 function mindReadingFunction(){
     document.querySelector("#mindreading").classList.remove("disabled")
     document.querySelector("#mindreading").classList.add("enabled")
 }
 
-document.querySelector("#activate-mindreading").addEventListener("click", mindReadingFunction)   
+document.querySelector("#activate-mindreading").addEventListener("click", activateAny)   
  
 
 function xrayHandlerFunction(){
@@ -28,7 +28,7 @@ function xrayHandlerFunction(){
     document.querySelector("#xray").classList.add("enabled")
 }
 
-document.querySelector("#activate-xray").addEventListener("click", xrayHandlerFunction)
+document.querySelector("#activate-xray").addEventListener("click", activateAny)
 
 function allPowersEnabled(){
     const classArray = document.querySelectorAll(".power")
@@ -55,12 +55,14 @@ document.querySelector("#deactivate-all").addEventListener("click", allPowersDis
 
 
 // Challenge
-function activateAny(whichButton){
-    const buttonClicked = document.querySelector.event.target.id.split("-")
+function activateAny(){
+    const buttonClicked = event.target.id
+    const idToSelect = event.target.id.split("-")[1]
+    const section =document.querySelector(`#${idToSelect}`)
+    section.classList.toggle("enabled");
    console.log(buttonClicked)
 }
 
-activateAny("#activate-xray")
 
 
 
